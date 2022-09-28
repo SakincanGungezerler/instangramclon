@@ -13,7 +13,7 @@ import {
     ShopFilled,
 } from "./icons";
 
-import  HomeScreen from "./screens/Home"
+import  HomeScreen from "./screens/home"
 import  SearchScreen from "./screens/Search"
 import  ReelScreen from "./screens/Reel"
 import  ShopScreen from "./screens/Shop"
