@@ -1,3 +1,4 @@
+import { Image, StyleSheet } from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
@@ -18,6 +19,7 @@ import  SearchScreen from "./screens/Search"
 import  ReelScreen from "./screens/Reel"
 import  ShopScreen from "./screens/Shop"
 import  ProfileScreen from "./screens/Profile"
+
 
 
 function Screens() {
@@ -89,6 +91,18 @@ function Screens() {
             <Tab.Screen
                 name="profile"
                 component={ProfileScreen}
+                options={{
+                    tabBarIcon: ({ focused, color }) => (
+                        <Image
+                            style={[styles.avatar, {
+                                borderColor: focused ? '#000' : 'transparent'
+                            }]}
+                            source={{
+                                uri: 'https://miro.medium.com/max/640/1*UNf6kxqv_ujIjKoMI0q97A.png'
+                            }}
+                        />
+                    )
+                }}
             />
 
         </Tab.Navigator>
@@ -96,3 +110,12 @@ function Screens() {
 }
 
 export default Screens
+
+const styles = StyleSheet.create({
+    avatar: {
+        width: 25,
+        height: 25,
+        borderRadius: 21,
+        borderWidth: 1,
+    }
+})

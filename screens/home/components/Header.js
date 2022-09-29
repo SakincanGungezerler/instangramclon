@@ -12,16 +12,11 @@ function  Header() {
         <View style={styles.header}>
             <Logo size={104} fill="#000" />
             <View style={styles.actions}>
-                <TouchableOpacity activeOpacity={0.6}>
-                    <Plus size={24} fill="#000" />
-                </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.6}>
-                    <Heart size={24} fill="#000" />
-                </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.6}>
-                    <Messenger size={24} fill="#000" />
-                </TouchableOpacity>
+                <Plus size={24} fill="#000" />
+                <Heart size={24} fill="#000" />
+                <Messenger size={24} fill="#000" />
             </View>
+
         </View>
     )
 }
@@ -33,11 +28,10 @@ const styles = StyleSheet.create({
         height: 36,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between',
         paddingHorizontal: 15
     },
     actions: {
-        flexDirection: 'row',
+        flexDirection: 'row'
 
     }
 })
