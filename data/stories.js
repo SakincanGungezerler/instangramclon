@@ -9,7 +9,7 @@ export default [
     {
         id: 2,
         user: {
-            name: 'Sakincan',
+            name: 'Sakincan ',
             avatar: 'https://miro.medium.com/max/640/1*UNf6kxqv_ujIjKoMI0q97A.png'
         }
     },

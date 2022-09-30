@@ -1,5 +1,6 @@
 import {ScrollView, View, Text, StyleSheet, Image} from "react-native";
 import stories from "../../../data/stories";
+import comments from "../../../data/comments.json"
 
 function Stories() {
     return (
@@ -8,16 +9,19 @@ function Stories() {
                 showsHorizontalScrollIndicator={false}
                 horizontal={true}
             >
-                {stories.map(story => (
-                    <View style={styles.story}>
+                {comments.map(story => (
+                    <View key={story.id} style={styles.story}>
                         <View style={styles.cover}>
                             <Image
                                 style={styles.avatar}
                                 source={{
-                                    uri: story.user.avatar
+                                    uri: story.avatar
                                 }}
                             />
-                            <Text style={styles.username} numberOfLines={1}>{story.user.name}</Text>
+                            <Text
+                                style={styles.username}
+                                numberOfLines={1} >
+                                {story.username}</Text>
                         </View>
                     </View>
                 ))}
