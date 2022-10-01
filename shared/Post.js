@@ -1,9 +1,9 @@
-import { StyleSheet, View, Text, Image } from "react-native"
-import { More } from "../icons"
-import Fitimage from "./Fitimage";
+import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native"
+import { More, Heart, Share, Comment, Bookmark } from "../icons"
 
 
-function Post({ post }) {
+
+function Post({ post, like }) {
     return(
         <View>
             <View style={styles.header}>
@@ -17,7 +17,32 @@ function Post({ post }) {
                 </View>
                 <More size={16} fill="#262626"/>
             </View>
-            <Fitimage src={post.image} />
+            <View style={styles.post}>
+                <Image
+                    style={styles.photo}
+                    source={{
+                        uri: post.image
+                    }}  />
+            </View>
+            <View style={styles.content}>
+                <View style={styles.actions}>
+                    <View style={styles.leftActions}>
+                        <TouchableOpacity style={styles.action} activeOpacity={0.7} >
+                            <Heart size={24} fill='#222' />
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.action} activeOpacity={0.7} >
+                            <Comment size={24} fill='#222' />
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.action} activeOpacity={0.7} >
+                            <Share size={24} fill='#222' />
+                        </TouchableOpacity>
+                    </View>
+                    <TouchableOpacity activeOpacity={0.7} >
+                        <Bookmark size={24} fill='#222' />
+                    </TouchableOpacity>
+                </View>
+                <Text>Likes</Text>
+            </View>
         </View>
     )
 }
@@ -46,5 +71,30 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 14,
         fontWeight: 'bold'
+    },
+    photo: {
+        width: '100%',
+        height: 400
+    },
+    post: {
+        position: 'relative',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    content: {
+        paddingHorizontal: 15
+    },
+    actions: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        height: 40,
+
+    },
+    leftActions: {
+        flexDirection: 'row'
+    },
+    action: {
+        marginRight: 12
     }
 })

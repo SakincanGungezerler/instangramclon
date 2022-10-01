@@ -1,5 +1,4 @@
 import {ScrollView, View, Text, StyleSheet, Image} from "react-native";
-import stories from "../../../data/stories";
 import comments from "../../../data/comments.json"
 
 function Stories() {
